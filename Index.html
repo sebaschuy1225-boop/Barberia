@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>black Barber | Barbería</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        /* NAVEGACIÓN */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.95);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* INICIO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 40px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.85)),
+                url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #d4af37;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #f0cc4d;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 80px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 35px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #aaa;
+        }
+
+        /* SERVICIOS */
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .servicio {
+            background: #151515;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #292929;
+            border-radius: 8px;
+            transition: .3s;
+        }
+
+        .servicio:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+        }
+
+        .servicio h3 {
+            margin: 15px 0;
+            color: white;
+        }
+
+        .servicio p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            font-size: 24px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .icono {
+            font-size: 40px;
+        }
+
+        /* GALERÍA */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 7px;
+            transition: .3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.03);
+        }
+
+        /* CONTACTO */
+        .contacto {
+            text-align: center;
+            background: #111;
+        }
+
+        .contacto p {
+            margin: 12px 0;
+            color: #ccc;
+            font-size: 17px;
+        }
+
+        .whatsapp {
+            margin-top: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            color: #777;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+        /* MÓVIL */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+    <header>
+        <div class="logo">GOGETA BARBER</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+
+        <div>
+            <h1>GOGETA <span>BARBER</span></h1>
+
+            <p>
+                Estilo, precisión y actitud.
+                Tu mejor corte empieza aquí.
+            </p>
+
+            <a href="#contacto" class="btn">
+                RESERVAR CITA
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+
+        <div class="titulo">
+            <h2>NUESTROS SERVICIOS</h2>
+            <p>Calidad y estilo en cada corte.</p>
+        </div>
+
+        <div class="servicios">
+
+            <div class="servicio">
+                <div class="icono">✂️</div>
+                <h3>Corte Clásico</h3>
+                <p>Corte personalizado según tu estilo.</p>
+                <div class="precio">$100</div>
+            </div>
+
+            <div class="servicio">
+                <div class="icono">🔥</div>
+                <h3>Fade</h3>
+                <p>Degradado profesional y moderno.</p>
+                <div class="precio">$120</div>
+            </div>
+
+            <div class="servicio">
+                <div class="icono">🧔</div>
+                <h3>Corte + Barba</h3>
+                <p>Corte completo acompañado de arreglo de barba.</p>
+                <div class="precio">$150</div>
+            </div>
+
+            <div class="servicio">
+                <div class="icono">💈</div>
+                <h3>Barba</h3>
+                <p>Perfilado y cuidado profesional.</p>
+                <div class="precio">$30</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALERÍA -->
+    <section id="galeria">
+
+        <div class="titulo">
+            <h2>calidad precio de la zona</h2>
+            <p>lugar .</p>
+        </div>
+
+        <div class="galeria">
+
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80">
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+
+        <div class="titulo">
+            <h2>pregunta si hay fila</h2>
+            <p>ven por tu corte de cabello con nosotros.</p>
+        </div>
+
+        <p>📍 calle. chacabuco #4756, Monterrey, Nuevo León</p>
+
+        <p>📞 81 1234 5678</p>
+
+        <p>🕒 Lunes - Domingo: 1:00 PM - 8:00 PM Martes cerrado </p>
+
+        <div class="whatsapp">
+
+            <!-- CAMBIA EL NÚMERO POR EL DE TU NEGOCIO -->
+            <a
+                class="btn"
+                href="https://wa.me/528142774990"
+                target="_blank">
+
+                💬 RESERVAR POR WHATSAPP
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        © 2026 <span>GOGETA BARBER</span> |
+        Todos los derechos reservados.
+
+    </footer>
+
+</body>
+</html>
